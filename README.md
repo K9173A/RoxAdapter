@@ -13,4 +13,4 @@ More levels and information:
 * http://autofish.net/shrines/rox/index.html
 
 ## License
-RoxAdapter is released under the termps of the MIT license. See [MIT](https://opensource.org/licenses/MIT) and [LICENSE](https://github.com/K9173A/RoxAdapter/blob/master/LICENSE) for more information.
+RoxAdapter is released under the terms of the MIT license. See [MIT](https://opensource.org/licenses/MIT) and [LICENSE](https://github.com/K9173A/RoxAdapter/blob/master/LICENSE) for more information.
