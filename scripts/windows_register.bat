@@ -11,30 +11,30 @@
 
 set gamePath=""
 if "%~1" == "" (
-	echo Game directory was not specified - trying default one...
-	set "gamePath=%windir:~0,3%\Program Files (x86)\RoX\"
+    echo Game directory was not specified - trying default one...
+    set "gamePath=%windir:~0,3%\Program Files (x86)\RoX\"
 ) else (
-	set "gamePath=%~1"
+    set "gamePath=%~1"
 )
 
 if "%gamePath%" == "help" (
-	echo Syntax: register_dll.bat [rox_root_path]
-	goto END
+    echo Syntax: register_dll.bat [rox_root_path]
+    goto END
 )
 
 for /f %%a in ("wmic os get osarchitecture /value") do (
-	if %%a equ 64 (
-		set regsvrDir=System32
-	) else (
-		set regsvrDir=SysWOW64
-	)
+    if %%a equ 64 (
+        set regsvrDir=System32
+    ) else (
+        set regsvrDir=SysWOW64
+    )
 )
 
 for /r %%i in (..\lib\*.dll) do (
-	copy "%%~fi" "%gamePath%%%~nxi"
-	if "%%~nxi" == "dx8vb.dll" (
-		%WINDIR%\%regsvrDir%\regsvr32.exe "%gamePath%dx8vb.dll"
-	)
+    copy "%%~fi" "%gamePath%%%~nxi"
+    if "%%~nxi" == "dx8vb.dll" (
+        %WINDIR%\%regsvrDir%\regsvr32.exe "%gamePath%dx8vb.dll"
+    )
 )
 
 :END
